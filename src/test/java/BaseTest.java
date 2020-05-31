@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     static WebDriver driver;
-    static String baseUrl;
+    static String goUrl;
     private static final Properties properties = TestProperties.getInstance ( ).getProperties ( );
     static WebDriverWait wait;
 
@@ -20,7 +20,7 @@ public class BaseTest {
     @BeforeClass
     public static void setUp ( ) throws Exception {
 
-        baseUrl = properties.getProperty ( "app.url" );
+        goUrl = properties.getProperty ( "app.url" );
         driver.manage ( ).window ( ).maximize ( );
         driver.manage ( ).timeouts ( ).pageLoadTimeout ( 20 , TimeUnit.SECONDS );
         wait = new WebDriverWait ( driver , 20 );
